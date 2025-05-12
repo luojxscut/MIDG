@@ -1,6 +1,10 @@
-MIDG
+## Mask inpainting-based data generation architecture for surface defect images with complex backgrounds
+[Paper](https://doi.org/10.1007/s11760-025-03987-y) | [BibTex](#citation)
+### Introduction:
+In the electronic manufacturing process, deep learning (DL)-based defect detection models often suffer from limited training defect datasets. To enhance training data, a novel mask inpainting-based data generation architecture (MIDG) is developed for surface defect images with complex backgrounds. It consists of a mask inpainting block, an edge generation block, followed by a defect generation module. The defect generation module is proposed based on an encoder-decoder model with an edge attention block, which hybridizes the information from inpainted normal images and edge maps simultaneously, where the first focuses on texture information and the second on edge structure, generated respectively from the mask inpainting and edge generation blocks. Besides, an annotation strategy is developed, which is at the rectangular mask level and can be easily executed. Experimental results demonstrate that our proposed method can generate various and high-quality defects on flexible printed circuit (FPC) surfaces with irregular circuit lines and copper-covered regions. After adding the generated samples to the training set, the mean Average Precision (mAP) of DL-based detection models such as Faster RCNN, YOLOv8, and YOLOv5 for FPC defect detection increases by 3.1%, 2.7%, and 3.0%, respectively. Detailed description can be found in our [paper](https://doi.org/10.1007/s11760-025-03987-y).
+
 The architecture of our proposed method MIDG:
-![Fig3](https://github.com/user-attachments/assets/a554b110-8b36-4291-8768-041410d2cb87)
+![Fig3](https://github.com/user-attachments/assets/6c4e08be-d3b6-464a-bf31-dd76a73ae305)
 
 Comparison with excellent image inpainting methods:
 ![Fig6](https://github.com/user-attachments/assets/f95abe12-9aa3-4239-a6aa-a177164ddd19)
