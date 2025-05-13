@@ -17,7 +17,7 @@ The architecture of our proposed method MIDG:
 ## Installation
 - Clone this repo:
 ```bash
-git clone https://github.com/chenjiaxuandaima/MIDG.git
+git clone https://github.com/luojxscut/MIDG.git
 cd MIDG
 ```
 - Install PyTorch and dependencies from http://pytorch.org
