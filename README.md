@@ -51,13 +51,33 @@ pip install iopaint
 iopaint run --model=lama --device=cpu --image=dataset/kinds/defect_kind/images/train --mask=dataset/kinds/defect_kind/mask/train --output=dataset/kinds/defect_kind/inpaint/train
 ```
 ## Running
-set file list on dataset run:
+Set file list of dataset:
 ```bash
 python scripts/flist2.py --path ./dataset/
 ```
-Set the configuration file, refer to 
+Set the configuration file, refer to checkpoints/exposed_copper/config.yml
 ### Training
-
+Train the edge generation block:
+```bash
+python train.py --model 1 --checkpoints ./checkpoints/exposed_copper/
+```
+Train the defect generation module:
+```bash
+python train.py --model 3 --checkpoints ./checkpoints/exposed_copper/
+```
+### Testing
+Generate defect edge:
+```bash
+python test.py --model 1 --checkpoints ./checkpoints/exposed_copper/
+```
+Generate defect:
+```bash
+python test.py --model 3 --checkpoints ./checkpoints/exposed_copper/
+```
+### Evaluating
+```bash
+python ./scripts/metrics.py --data datasets/kind/exposed_copper/test --output ./checkpoints/exposed_copper/result
+```
 ## Acknowledgments
 This project is developed based on the [EC](https://github.com/knazeri/edge-connect.git) and [LaMa](https://github.com/advimman/lama) projects. We sincerely appreciate their outstanding work.
 ## Citation
